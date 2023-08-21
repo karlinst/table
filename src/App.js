@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import GitHubContributionChart from "./Component/Table/Table"; 
+import './App.css'
 
-function App() {
+import Cube from "./Component/Cube/Cube";
+
+
+
+
+const contributionData = [
+  { date: '2023-07-21', count: 2 },
+  { date: '2023-08-05', count: 2 },
+  { date: '2023-08-12', count: 2 },
+  { date: '2023-12-02', count: 2 },
+  { date: '2023-11-12', count: 2 },
+  { date: '2023-09-02', count: 2 },
+  { date: '2024-01-02', count: 2 },
+  { date: '2024-02-20', count: 2 },
+
+];
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="cubes">
+        <Cube/>
+      </div>
+      <GitHubContributionChart contributionData={contributionData} />
+      <div>
+        <h1>
+          
+        </h1>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
